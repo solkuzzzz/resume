@@ -1,19 +1,53 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styllesheet.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="resume">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  .resume{font-family:'Outfit',sans-serif;font-weight:400;color:var(--color-text-primary);max-width:820px;margin:0 auto;padding:2rem 1.5rem 3rem;line-height:1.6;}
+  .header{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;padding-bottom:2rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:2rem;}
+  .name{font-family:'DM Serif Display',serif;font-size:42px;font-weight:400;line-height:1.1;letter-spacing:-0.5px;}
+  .title-label{font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-secondary);margin-top:8px;}
+  .contact-block{text-align:right;font-family:'DM Mono',monospace;font-size:12px;color:var(--color-text-secondary);line-height:2;}
+  .contact-block a{color:var(--color-text-info);text-decoration:none;}
+  .body{display:grid;grid-template-columns:1fr 255px;gap:2.5rem;}
+  .section{margin-bottom:2rem;}
+  .section-label{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:1rem;padding-bottom:6px;border-bottom:0.5px solid var(--color-border-tertiary);}
+  .summary{font-size:15px;color:var(--color-text-secondary);line-height:1.75;}
+  .summary em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--color-text-primary);font-size:17px;}
+  .job{margin-bottom:1.5rem;}
+  .job-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px;}
+  .job-title{font-size:14px;font-weight:500;}
+  .job-period{font-family:'DM Mono',monospace;font-size:11px;color:var(--color-text-tertiary);}
+  .job-company{font-size:12px;color:var(--color-text-secondary);margin-bottom:6px;}
+  .job-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.65;}
+  .project{margin-bottom:1.25rem;padding:12px 14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);}
+  .project-name{font-size:13px;font-weight:500;margin-bottom:4px;}
+  .project-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6;}
+  .sidebar-section{margin-bottom:1.75rem;}
+  .tag-cloud{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-family:'DM Mono',monospace;font-size:11px;padding:4px 10px;border-radius:99px;border:0.5px solid var(--color-border-secondary);color:var(--color-text-secondary);background:var(--color-background-secondary);}
+  .tag.active{background:#E6F1FB;border-color:#B5D4F4;color:#185FA5;}
+  .tag.learning{background:#FAEEDA;border-color:#FAC775;color:#854F0B;}
+  .tag.angular{background:#FCEBEB;border-color:#F7C1C1;color:#A32D2D;}
+  .edu-item{margin-bottom:1rem;}
+  .edu-name{font-size:13px;font-weight:500;line-height:1.4;}
+  .edu-meta{font-size:11px;color:var(--color-text-tertiary);font-family:'DM Mono',monospace;margin-top:2px;}
+  .course-item{font-size:12px;color:var(--color-text-secondary);padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary);line-height:1.4;}
+  .course-item:last-child{border-bottom:none;}
+  .course-provider{font-size:10px;color:var(--color-text-tertiary);font-family:'DM Mono',monospace;}
+  .avail-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:6px 12px;border-radius:99px;background:#EAF3DE;color:#3B6D11;border:0.5px solid #C0DD97;}
+  .dot{width:7px;height:7px;border-radius:50%;background:#639922;}
+  .github-link{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:12px;color:var(--color-text-info);text-decoration:none;margin-top:10px;}
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+  .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--color-text-tertiary);}
+  .legend-dot{width:8px;height:8px;border-radius:50%;}
+</style>
+
+<div class="resume">
   <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Резюме Junior Frontend Developer — разработка веб-интерфейсов, Angular, React, TypeScript</h2>
 
   <div class="header">
     <div>
-      <div class="name">Власова<br>София</div>
+      <div class="name">Власова<br>Софья</div>
       <div class="title-label">Junior Frontend Developer</div>
     </div>
     <div class="contact-block">
@@ -30,7 +64,7 @@
       <div class="section">
         <div class="section-label">О себе</div>
         <div class="summary">
-          Разработчик с <em>двойным подходом</em> — диплом дизайнера и техническая специальность/программирование. Понимаю интерфейс со стороны инженера и пользователя одновременно. Интересуюсь сложными управляющими системами: задачи с реальными данными, чёткой бизнес-логикой и высокими требованиями к надёжности — именно то, где хочу расти.
+          Разработчик с <em>двойной оптикой</em> — диплом дизайнера и техническая специальность программирования. Понимаю интерфейс со стороны инженера и пользователя одновременно. Интересуюсь сложными управляющими системами: задачи с реальными данными, чёткой бизнес-логикой и высокими требованиями к надёжности — именно то, где хочу расти.
         </div>
       </div>
 
@@ -98,7 +132,6 @@
         </div>
       </div>
 
-
       <div class="sidebar-section">
         <div class="section-label">Образование</div>
         <div class="edu-item">
@@ -148,7 +181,3 @@
     </div>
   </div>
 </div>
-
-</body>
-</html>
-
